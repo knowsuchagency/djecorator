@@ -16,7 +16,6 @@ class Route:
         def wrapper(f):
             urlname = self.name_prefix + (name or f.__name__)
             urlpath = path or f.__name__
-            urlpath = urlpath.replace("_", "-")
             urlpath = self.url_prefix + "/" + urlpath.lstrip("/")
             
             # Check if f is a class with an as_view method
